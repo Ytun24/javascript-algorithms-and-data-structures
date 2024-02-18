@@ -8,24 +8,24 @@ BubbleSort Pseudocode (Naive)
 */
 
 function bubbleSort(arr) {
-    for (let i = arr.length-1; i >= 0; i--) {
-        for(let j = 0; j <= i - 1; j++) {
-            console.log(arr, arr[j], arr[j+1]);
+  for (let i = arr.length - 1; i >= 0; i--) {
+    for (let j = 0; j <= i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1]);
 
-            if (arr[j] > arr[j+1]) {
-                swap(arr, j, j+1);
-            }
-        }
-        console.log("ONE TIME PASS!");
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+      }
     }
+    console.log("ONE TIME PASS!");
+  }
 
-    return arr;
+  return arr;
 }
 
 function swap(arr, index1, index2) {
-    var temp = arr[index1];
-    arr[index1] = arr[index2];
-    arr[index2] = temp;
+  var temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
 }
 
 /* 

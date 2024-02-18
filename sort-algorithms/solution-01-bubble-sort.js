@@ -8,7 +8,7 @@ function bubbleSort(arr) {
   for (let i = arr.length; i > 0; i--) {
     var noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
-      console.log(arr, arr[j], arr[j+1]);
+      console.log(arr, arr[j], arr[j + 1]);
 
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
@@ -16,7 +16,7 @@ function bubbleSort(arr) {
       }
     }
     if (noSwaps) break;
-    console.log("ONE TIME PASS!")
+    console.log("ONE TIME PASS!");
   }
   return arr;
 }
@@ -35,4 +35,4 @@ ONE TIME PASS!
 Return: [4, 6, 10, 15]
 */
 
-bubbleSort([8, 1, 2, 3, 4, 5, 6, 7])
+bubbleSort([8, 1, 2, 3, 4, 5, 6, 7]);
