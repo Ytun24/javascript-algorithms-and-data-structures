@@ -9,7 +9,7 @@ function bubbleSort(arr) {
     var noSwaps = true;
     for (let j = 0; j < i - 1; j++) {
       console.log(arr, arr[j], arr[j+1]);
-      
+
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
         noSwaps = false;
@@ -31,7 +31,8 @@ bubbleSort([6, 4, 15, 10]);
 ONE TIME PASS!
 [4, 6, 10, 15] 4 6
 [4, 6, 10, 15] 6 10
-[4, 6, 10, 15]
+
+Return: [4, 6, 10, 15]
 */
 
 bubbleSort([8, 1, 2, 3, 4, 5, 6, 7])

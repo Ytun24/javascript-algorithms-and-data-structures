@@ -41,5 +41,6 @@ ONE TIME PASS!
 ONE TIME PASS!
 [4, 6, 10, 15] 4 6
 ONE TIME PASS!
-[4, 6, 10, 15]
+
+Return: [4, 6, 10, 15]
 */
