@@ -11,11 +11,14 @@ function pivot(arr, start = 0, end = arr.length - 1) {
      if (pivot > arr[i]) {
        swapIdx++;
        swap(arr, swapIdx, i);
+       console.log("swap:", i, swapIdx);
      }
+     console.log(arr, arr[swapIdx], arr[i]);
    }
  
    // Swap the pivot from the start the swapPoint
    swap(arr, start, swapIdx);
+   console.log("Result: ", arr, swapIdx);
    return swapIdx;
  }
  

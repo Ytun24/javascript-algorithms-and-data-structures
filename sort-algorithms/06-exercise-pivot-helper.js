@@ -14,32 +14,68 @@ Pivot Pseudocode
 */
 
 function pivot(arr, startIndex, endIndex) {
-   let pivotPoint = 0;
-   let pivot = arr[startIndex];
+  let pivotPoint = 0;
+  let pivot = arr[startIndex];
 
-   const swap = (arr, idx1, idx2) => {
+  const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
   };
 
+  for (let i = 1; i < arr.length; i++) {
+    // compare pivot greater than current value
+    if (pivot > arr[i]) {
+      // increase pivotPoint
+      pivotPoint += 1;
+      swap(arr, i, pivotPoint);
+      console.log("swap:", i, pivotPoint);
+    }
+    console.log(arr, arr[pivotPoint], arr[i]);
+  }
 
-   for (let i = 1; i < arr.length; i++) {
+  swap(arr, startIndex, pivotPoint);
+  console.log("Result: ", arr, pivotPoint);
 
-        // compare pivot greater than current value
-        if (pivot > arr[i]) {
-            // increase pivotPoint
-            pivotPoint += 1;
-            swap(arr, i, pivotPoint);
-            console.log(i, pivotPoint);
-        }
-        console.log(arr, arr[i], pivotPoint);
-   }
-
-   swap(arr, startIndex, pivotPoint);
-   console.log("result: ", arr, pivotPoint);
-
-   return pivotPoint;
+  return pivotPoint;
 }
 
 // pivot([ 5, 2, 1, 4, 6, 3 ], 0, 5)
+pivot([4, 8, 2, 1, 6, 3], 0, 5);
 
-// pivot([ 4, 8, 2, 1, 6, 3 ], 0, 5)
+/*
+Example
+
+pivot([ 4, 8, 2, 1, 6, 3 ], 0, 5)
+
+[ 4, 8, 2, 1, 6, 3 ] 4 8
+swap: 2 1
+[ 4, 2, 8, 1, 6, 3 ] 2 8
+swap: 3 2
+[ 4, 2, 1, 8, 6, 3 ] 1 8
+[ 4, 2, 1, 8, 6, 3 ] 1 6
+swap: 5 3
+[ 4, 2, 1, 3, 6, 8 ] 3 8
+
+Result:  [ 3, 2, 1, 4, 6, 8 ] 3
+*/
+
+class Student {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  fullName() {
+    return `Your full name is ${this.firstName} ${this.lastName}`;
+  }
+
+  static enrollStudents(...students) {
+    console.log("ENROLL");
+  }
+}
+
+let firstStudent = new Student("Colt", "Steele");
+
+firstStudent.fullName(); // "Colt Steele"
+
+Student.enrollStudents([firstStudent, secondStudent]);
+
+
